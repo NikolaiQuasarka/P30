@@ -1,6 +1,6 @@
 ﻿namespace P30
 {
-    partial class DBConnetcionForm
+    partial class ConnetcionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,16 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            comboBoxName = new ComboBox();
+            textBoxLogin = new TextBox();
+            textBoxPassword = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 98);
+            label1.Location = new Point(23, 82);
             label1.Name = "label1";
             label1.Size = new Size(141, 20);
             label1.TabIndex = 0;
@@ -48,7 +49,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(118, 145);
+            label2.Location = new Point(109, 129);
             label2.Name = "label2";
             label2.Size = new Size(55, 20);
             label2.TabIndex = 1;
@@ -57,47 +58,57 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(108, 196);
+            label3.Location = new Point(99, 180);
             label3.Name = "label3";
             label3.Size = new Size(65, 20);
             label3.TabIndex = 2;
             label3.Text = "Пароль:";
             // 
-            // comboBox1
+            // comboBoxName
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(179, 95);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(211, 28);
-            comboBox1.TabIndex = 3;
+            comboBoxName.FormattingEnabled = true;
+            comboBoxName.Location = new Point(170, 79);
+            comboBoxName.Name = "comboBoxName";
+            comboBoxName.Size = new Size(211, 28);
+            comboBoxName.TabIndex = 3;
             // 
-            // textBox1
+            // textBoxLogin
             // 
-            textBox1.Location = new Point(179, 142);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(211, 27);
-            textBox1.TabIndex = 4;
+            textBoxLogin.Location = new Point(170, 126);
+            textBoxLogin.Name = "textBoxLogin";
+            textBoxLogin.Size = new Size(211, 27);
+            textBoxLogin.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            textBox2.Location = new Point(179, 193);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(211, 27);
-            textBox2.TabIndex = 5;
+            textBoxPassword.Location = new Point(170, 177);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.Size = new Size(211, 27);
+            textBoxPassword.TabIndex = 5;
             // 
-            // LogIn
+            // button1
+            // 
+            button1.Location = new Point(170, 248);
+            button1.Name = "button1";
+            button1.Size = new Size(113, 31);
+            button1.TabIndex = 6;
+            button1.Text = "Соедениться";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // ConnetcionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(442, 330);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(button1);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxLogin);
+            Controls.Add(comboBoxName);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "LogIn";
+            Name = "ConnetcionForm";
             Text = "Подключение к базе данных";
             ResumeLayout(false);
             PerformLayout();
@@ -108,8 +119,9 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private ComboBox comboBoxName;
+        private TextBox textBoxLogin;
+        private TextBox textBoxPassword;
+        private Button button1;
     }
 }

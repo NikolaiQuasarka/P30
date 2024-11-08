@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace P30.Model
 {
-    internal class ModelBase : INotifyPropertyChanged
+    internal abstract class ModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged; 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")

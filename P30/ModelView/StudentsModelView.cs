@@ -11,7 +11,7 @@ using P30.View;
 
 namespace P30.ModelViews
 {
-    internal class StudentsModelView : ModelViewBase
+    internal class StudentsModelView : ModelViewBase<Student>
     {
         public Student? SelectedStudent { get => Students.FirstOrDefault(s => s.Id == SelectedStudentId); }
         public int SelectedStudentId { get; set; }
@@ -21,24 +21,26 @@ namespace P30.ModelViews
         private int newId = 0; 
         public int NewId
         {
-            get => newId; set { if (newId != value) { newId = value; OnPropertyChanged(); } }
+            get => newId; set { { newId = value; OnPropertyChanged(); } }
         }
     
         private string newName = ""; 
         public string NewName 
         {
-            get => newName; set { if (newName != value) { newName = value; OnPropertyChanged(); } } 
+            get => newName; set {  { newName = value; OnPropertyChanged(); } } 
         }
         private int newAge = 0; 
         public int NewAge
         {
-            get => newAge; set { if (newAge != value) { newAge = value; OnPropertyChanged(); } }
+            get => newAge; set {  { newAge = value; OnPropertyChanged(); } }
         }
         public void AddStudent()
         {
             Student NewStudent = new Student(newId, newName, newAge);
             Students.Add(NewStudent);
-            NewStudent = new Student(0, "", 0);
+            NewId = 0;
+            NewName = "";
+            NewAge = 0;
         } 
         
         

@@ -8,7 +8,7 @@ namespace P30
        
         public static object SqlConnData()
         {
-            DBConnetcionForm form = new DBConnetcionForm();
+            ConnetcionForm form = new ConnetcionForm();
             string hostName = "";
             string login = "";
             string password = "";
