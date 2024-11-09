@@ -1,55 +1,20 @@
-﻿using P30.Model;
+﻿using PropertyChanged;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace P30.Models
+namespace P30.Model;
+
+public partial class Student: ModelBase
 {
-    internal class Student: ModelBase
-    {
-        private int id;
-        private string name;
-        private int age;
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Name { 
-            get
-            {
-                return name;
-            } 
-            set
-            { 
-                name = value;
-                OnPropertyChanged();
-            } 
-        }
-        public int Age { get
-            { 
-                return age;
-            }
-            set
-            { 
-                age = value;
-                OnPropertyChanged();
-            } 
-        }
+    public int StudentId { get; set; }
 
-        public Student(int id, string name, int age) { 
-            Id = id;
-            Name = name;
-            Age = age;
-        }
-    }
+    public string StudentFullname { get; set; } = null!;
+
+    public int StudyGroupId { get; set; }
+
+    public string StudentPhoneNumber { get; set; } = null!;
+
+    public virtual ICollection<Performance> Performances { get; set; } = new List<Performance>();
 }

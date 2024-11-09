@@ -1,6 +1,6 @@
 ﻿namespace P30.Forms
 {
-    partial class StudentsAndGroups
+    partial class StudentsAndGroupsView
     {
         /// <summary>
         /// Required designer variable.
