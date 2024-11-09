@@ -21,8 +21,8 @@ namespace P30.View.DataWork
 
             departmentModelView = new DepartmentModelView();
             dataGridView1.DataBindings.Add(new Binding("DataSource", departmentModelView, "Entities"));
-            textBoxNewName.DataBindings.Add(new Binding("Text", departmentModelView, "DepartmentName"));
-            //this.DataBindings.Add(new Binding("SelectedDepartment", departmentModelView, "SelectedEntity"));
+            textBoxNewName.DataBindings.Add(new Binding("Text", departmentModelView, "DepartmentNewName"));
+            textBoxSelectedName.DataBindings.Add(new Binding("Text", departmentModelView, "DepartmentUpdName"));
         }
         private DepartmentModelView departmentModelView;
         public Department? SelectedDepartment
@@ -47,6 +47,12 @@ namespace P30.View.DataWork
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             departmentModelView.Remove();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            if(SelectedDepartment != null)
+            departmentModelView.Update();
         }
     }
 }

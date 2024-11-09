@@ -71,7 +71,7 @@
             DepartmentId.ReadOnly = true;
             DepartmentId.Visible = false;
             // 
-            // DepartmentName
+            // DepartmentNewName
             // 
             DepartmentName.DataPropertyName = "DepartmentName";
             DepartmentName.HeaderText = "Название кафедры";
@@ -97,6 +97,7 @@
             buttonUpdate.TabIndex = 2;
             buttonUpdate.Text = "Изменить";
             buttonUpdate.UseVisualStyleBackColor = true;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // buttonAdd
             // 

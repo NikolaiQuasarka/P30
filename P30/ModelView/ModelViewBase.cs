@@ -1,4 +1,5 @@
-﻿using P30.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using P30.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,11 +57,15 @@ namespace P30.ModelView
         }
         public void Update()
         {
-
+            ExecuteWithContext(context => {
+                UpdateEntity();
+                context.Set<T>().Update(SelectedEntity);
+                context.SaveChanges();
+            });
         }
-
         protected abstract T CreateNewEntity();
         public T? SelectedEntity {  get; set; }
+        protected abstract void UpdateEntity();
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")

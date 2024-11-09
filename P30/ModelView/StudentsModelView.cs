@@ -63,5 +63,9 @@ namespace P30.ModelViews
         {
             throw new NotImplementedException();
         }
+        protected override void UpdateEntity()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

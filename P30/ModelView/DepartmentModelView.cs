@@ -11,16 +11,25 @@ namespace P30.ModelView
     {
         public DepartmentModelView()
         {
-            DepartmentName = "";
+            DepartmentNewName = "";
         }
-        public string DepartmentName { get; set; }
+        public string DepartmentNewName { get; set; }
         protected override Department CreateNewEntity()
         {
             var department = new Department()
             {
-                DepartmentName = this.DepartmentName
+                DepartmentName = this.DepartmentNewName
             };
             return department;
+        }
+        public string DepartmentUpdName { get; set; }
+        protected override void UpdateEntity()
+        {
+            if (SelectedEntity != null)
+            {
+                SelectedEntity.DepartmentName = this.DepartmentUpdName == "" ? SelectedEntity.DepartmentName : this.DepartmentUpdName;
+            }
+            else throw new Exception("Не выбрана сущность");
         }
     }
 }
